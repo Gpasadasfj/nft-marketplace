@@ -1,0 +1,277 @@
+@use "fonts.scss" as font;
+@use "colors.scss" as col;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  max-width: 1920px;
+  font-family: font.$primary-font;
+  margin: auto;
+  max-height: 1000px;
+  background-image: linear-gradient(
+    to right,
+    col.$white 55%,
+    col.$black 55%,
+    col.$black 100%
+  );
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  figure {
+    margin: 0;
+  }
+  nav {
+    ul {
+      margin: 0;
+      display: flex;
+      gap: 56px;
+      list-style: none;
+      margin-left: 150px;
+      a {
+        text-decoration: none;
+        color: col.$black;
+        padding: 15px 20px;
+        transition: all 0.3s ease;
+        border-radius: 20px;
+      }
+      a:hover {
+        text-decoration: underline;
+        background-color: col.$black;
+        color: col.$white;
+      }
+    }
+  }
+
+  aside {
+    display: flex;
+    margin-left: auto;
+    margin-right: 100px;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        padding: 10px 45px;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .sign-up {
+        color: col.$white;
+      }
+      .sign-in {
+        color: col.$white;
+        background-color: col.$red;
+      }
+    }
+  }
+}
+
+.main-container {
+  display: grid;
+  grid-template: 50% 30% / 55% 45%;
+  .hero-text {
+    grid-area: 1/ 1 / span 1 / span 1;
+    &-title {
+      font-family: font.$title-font;
+      font-size: 72px;
+      max-width: 920px;
+      font-weight: 400;
+      line-height: 96px;
+      margin: 0;
+      margin-top: 80px;
+    }
+    &-p {
+      color: col.$gray;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 40px;
+      margin: 0;
+      margin-top: 16px;
+      margin-bottom: 40px;
+    }
+    &-p span {
+      position: relative;
+    }
+    &-p span::after {
+      position: absolute;
+      content: "";
+      width: 83px;
+      height: 4px;
+      background-color: col.$red;
+      right: 43px;
+      top: 26px;
+    }
+    &-button {
+      display: inline-flex;
+      height: 45px;
+      justify-content: center;
+      align-items: center;
+      color: col.$white;
+      background-color: col.$red;
+      padding: 5px 70px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: col.$black;
+        color: col.$red;
+      }
+    }
+    div.buttons {
+      display: flex;
+      align-items: center;
+    }
+    &-info {
+      display: flex;
+      align-items: center;
+      color: col.$black;
+      padding: 5px 70px;
+      height: 45px;
+    }
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-area: 1/ 2 / span 2 / span 1;
+    background-image: url("../../img/Artzie-background.svg");
+    background-repeat: no-repeat;
+    background-position: right -70px top 20px;
+    background-size: 365px 840px;
+    .principal-art {
+      width: 574px;
+      height: 680px;
+      margin-top: 50px;
+    }
+    .social {
+      background-color: col.$white;
+      width: 608px;
+      height: 235px;
+      padding: 30px;
+      margin-top: -90px;
+
+
+      .up-side {
+        position: relative;
+        display: flex;
+        p {
+          color: col.$gray;
+        }
+        img {
+          width: 63px;
+          height: 64px;
+        }
+        &-left {
+          width: 50%;
+          height: 65px;
+          display: grid;
+          grid-template: 1fr 1fr / 33.33% 66.66%;
+          img {
+            grid-area: 1 / 1 / span 2 / span 1;
+            margin: auto;
+          }
+          p {
+            grid-area: 1 / 2 / span 2 / span 1;
+            margin: 0;
+          }
+          h4 {
+            grid-area: 2 / 2 / span 1 / span 1;
+            margin: 0;
+          }
+        }
+        &-right {
+          margin-left: auto;
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          p {
+            margin: 0;
+          }
+          h4 {
+            margin: 0;
+            margin-left: auto;
+          }
+        }
+      }
+      .up-side::after {
+        position: absolute;
+        content: "";
+        width: 600px;
+        height: 1px;
+        background-color: col.$black;
+        top: 73px;
+        left: 12px;
+      }
+
+      .down-side {
+        ul {
+          list-style: none;
+          display: flex;
+          justify-content: space-around;
+          margin-top: 30px;
+          margin-bottom: 0px;
+          padding: 0;
+          a {
+            text-decoration: none;
+            display: block;
+            padding: 10px 100px;
+            transition: all 0.3s ease;
+          }
+          .bid-now {
+            background-color: col.$red;
+            color: col.$white;
+            &:hover {
+              background-color: col.$black;
+              color: col.$red;
+            }
+          }
+          .view-artwork {
+            color: col.$red;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .info {
+      display: flex;
+      gap: 145px;
+      p {
+        color: col.$white;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+      span {
+        color: col.$red;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+    }
+  }
+  .featured-artwork {
+    grid-area: 2/ 1 / span 1 / span 1;
+    margin-top: 20px;
+    h3 {
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      font-family: font.$title-font;
+    }
+    .images {
+      display: flex;
+      gap: 48px;
+      margin-left: 8px;
+    }
+  }
+}
